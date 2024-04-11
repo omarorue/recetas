@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de ejempo</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div id="navegacion">
+            <button>
+                <a href="./index.html" title="Home">
+                    <img src="./img/home-1.svg" width="25px" height="25px">
+                </a>
+            </button>
+            <button>
+                <a href="./pags/nosotros.html" title="Nosotros">
+                    <img src="./img/user-hand-up.svg" width="25px" height="25px">
+                </a>
+            </button>
+            <button>
+                <a href="./pags/contacto.html" title="Contacto">
+                    <img src="./img/letter.svg" width="25px" height="25px">
+                </a>
+            </button>
+        </div>
+        <h1 id="encabezado" class="animate__animated animate__flip"> Cocinando con la tía Eduviges</h1>
+    </header>
+    <br>
+    <!------------------------Main espacio MENU----------------------------->
+    <main>
+        <article id="art_comida">
+            <!--  Renderizado de Mustache -->
+            <div id="templateMustache">
+            </div>
+            <!------------------------------>
+            <div id='menu' style="display: block;">
+                <h2>Las mejores recetas y sus secretos</h2>
+                <div id="opciones">
+                    <ul style="list-style-type:none">
+                        <li data-li="Empanadas"> <a id="empanadas">Empanadas</a></li>
+                        <li data-li="Puchero"> <a id="puchero">Puchero</a></li>
+                        <li data-li="Guiso"> <a id="guiso">Guiso de fideos</a></li>
+                        <li data-li="Polenta"> <a id="polenta">Polenta</a></li>
+                        <!--
+                        <li data-li="Test"> <a id="test">TEST</a></li>
+                        -->
+                    </ul>
+                </div>
+                <br>
+                <div id="cuadro_empanadas">
+                    <img id="img_cocina" src="./img/2079187_20.jpg" alt="Imagen de la cocina">
+                </div>
+            </div>
+	    <!------------------------------>
+        </article>
+    </main>
+    <!----------------------------PIE DE PAGINA-------------------------->
+    <footer>
+        <p id="contactos">
+            Llamanos al: 
+            <a href="tel: +54 9 11 1234-1234">
+                <img src="./img/cellphone.svg" width="30px" height="30px">
+            </a>
+            Mensajes de WhatsApp
+            <a href="https://wa.me/1112341234" target="_blank" title="Mandar Msje por WhatsApp">
+                <img id="whsapp" src="./img/whatsapp.svg" width="30px" height="30px">
+            </a>
+        </p>
+        <p id="copyR"> OHO informatics &copy copyright 2024</p>
+    </footer>
+    <!------------------------------------------------------------------->
+</body>
+    <!-----SCRIPT DE MUSTACHE : Se gregara a la pagina en el <div templateMustache>-->
+    <script type="tmpl/mustache" id="tmplTabla">
+        <tmplate>
+            {{#receta}}
+            <h2>{{r0}}</h2>
+            <ul>
+                <li>{{r1}}</li>
+                <li>{{r2}}</li>
+                <li>{{r3}}</li>
+                <li>{{r4}}</li>
+                <li>{{r5}}</li>
+                <li>{{r6}}</li>
+            </ul>
+            <br>
+            <div id="arrow_box">
+                <a onclick="{{pag_izq}}">
+                    <img id="flech_izq" src="./img/alt-arrow-left.svg" alt="Receta Anterior" width="28px" height="28px" title={{izq}}>
+                </a>
+                <img id="img_comida" src="./img/{{imagen}}" alt="{{r0}}">
+                <a onclick="{{pag_der}}">
+                    <img id="flech_der" src="./img/alt-arrow-right.svg" alt="Siguiente Receta" width="28px" height="28px" title={{der}}>
+                </a>
+            </div>
+            {{/receta}}
+        </tmplate>
+    </script>
+    <!------------------------------------------------------------------------------->
+    <script src="./js/Mustache_4_0_1.js"></script>
+    <script src="./js/index.js"></script>
+</html>
